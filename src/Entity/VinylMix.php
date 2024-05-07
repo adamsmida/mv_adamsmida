@@ -2,13 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\VinylMixRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\VinylMixRepository;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 #[ORM\Entity(repositoryClass: VinylMixRepository::class)]
 class VinylMix
 {
+    use TimestampableEntity;
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -26,13 +28,7 @@ class VinylMix
     #[ORM\Column(length: 255)]
     private ?string $genre = null;
 
-    #[ORM\Column]
-    private \DateTimeImmutable $createAt ;
 
-    public function __construct()
-    {
-        $this->createAt= new \DateTimeImmutable();
-    }
 
     #[ORM\Column]
     private int $votes = 0;
@@ -90,17 +86,7 @@ class VinylMix
         return $this;
     }
 
-    public function getCreateAt(): ?\DateTimeImmutable
-    {
-        return $this->createAt;
-    }
 
-    public function setCreateAt(\DateTimeImmutable $createAt): static
-    {
-        $this->createAt = $createAt;
-
-        return $this;
-    }
 
     public function getVotes(): ?int
     {
