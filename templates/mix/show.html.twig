@@ -12,6 +12,21 @@
             <div class="col-12 col-md-8 ps-5">
                 <h2 class="mb-4">{{ mix.trackCount }} songs <small>(genre: {{ mix.genre }})</small></h2>
                 <p>{{ mix.description }}</p>
+                {{ mix.votesString }} votes
+                <form action="{{ path('app_mix_vote', {id: mix.id }) }}" method="POST">
+                    <button
+                        type="submit"
+                        class="btn btn-outline-primary"
+                        name="direction"
+                        value="up"
+                    ><span class="fa fa-thumbs-up"></span></button>
+                    <button
+                        type="submit"
+                        class="btn btn-outline-primary"
+                        name="direction"
+                        value="down"
+                    ><span class="fa fa-thumbs-down"></span></button>
+                </form>
             </div>
         </div>
     </div>
