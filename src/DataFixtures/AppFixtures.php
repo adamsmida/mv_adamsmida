@@ -11,7 +11,7 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        VinylMixFactory::createMany(25);
+        VinylMixFactory::createMany(40);
         // $product = new Product();
         // $manager->persist($product);
         // $mix = new VinylMix();

@@ -20,7 +20,7 @@
     <div>
         <h2 class="mt-5">Mixes</h2>
         <div class="row">
-           {% for mix in mixes %}
+           {% for mix in pager %}
             <div class="col col-md-4">
             
                 <div class="mixed-vinyl-container p-3 text-center">
@@ -43,6 +43,7 @@
                 </div>
             </div>
             {% endfor %}
+             {{ pagerfanta(pager) }}
         </div>
     </div>
 </div>
