@@ -83,6 +83,7 @@
         "symfony/debug-bundle": "7.0.*",
         "symfony/maker-bundle": "*",
         "symfony/stopwatch": "7.0.*",
-        "symfony/web-profiler-bundle": "7.0.*"
+        "symfony/web-profiler-bundle": "7.0.*",
+        "zenstruck/foundry": "^1.37"
     }
 }
